@@ -1,0 +1,26 @@
+package oct19;
+
+import java.lang.reflect.*;
+
+
+class Middleware throws Exception
+{
+	public Object invokeMethod(String className, String methodName, Class [] paramType, Object paramvalues[])
+	{
+		Class c= Class.forName(className);
+		Method m= c.getMethod(methodName, paramType);
+		return m.invoke(c.newInstance(), paramvalues);
+	}
+
+}
+
+public class MiddlewareMain
+{
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+}

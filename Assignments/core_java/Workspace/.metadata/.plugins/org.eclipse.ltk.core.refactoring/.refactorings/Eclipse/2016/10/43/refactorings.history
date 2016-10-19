@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;oct19.Middleware.java&apos; to &apos;MiddlewareMain.java&apos;&#x0D;&#x0A;- Original project: &apos;Eclipse&apos;&#x0D;&#x0A;- Original element: &apos;oct19.Middleware.java&apos;&#x0D;&#x0A;- Renamed element: &apos;oct19.MiddlewareMain.java&apos;" description="Rename compilation unit &apos;Middleware.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;oct19{Middleware.java" name="MiddlewareMain.java" references="false" stamp="1476874094254" version="1.0"/>
+</session>

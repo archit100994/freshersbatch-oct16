@@ -1,14 +1,21 @@
 class Banner
 {
+		static int i=0;
 	public static void main(String[] args) throws Exception {
-		String s= new String("welcome to Java");
-		while(true){
-			for(int i=0; i<s.length(); i++)
-			{
-				System.out.print(s.substring(i+1, s.length()));
-				System.out.println(s.substring(0,i));
-				Thread.sleep(1000);
+		StringBuilder s= new StringBuilder("**Welcome to Java** ");
+		while(true)
+		{
+			if (i>=s.length()) {
+				i=0;
 			}
+			else
+			{
+				System.out.print("\r"+s.substring(i, s.length()));
+				System.out.print(s.substring(0,i));
+				Thread.sleep(100);
+				i++;
+			}
+			
 		}
 	}
 }

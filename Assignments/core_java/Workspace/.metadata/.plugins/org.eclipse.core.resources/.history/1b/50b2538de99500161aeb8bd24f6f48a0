@@ -1,0 +1,21 @@
+package oct19;
+
+import java.lang.reflect.*;
+
+
+public class MiddlewareMain
+{
+	
+}
+
+public class MiddlewareMain
+{
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		Class paramType[]= new Class;
+		Object paramvalues[]= new Object;
+		
+	}
+
+}
