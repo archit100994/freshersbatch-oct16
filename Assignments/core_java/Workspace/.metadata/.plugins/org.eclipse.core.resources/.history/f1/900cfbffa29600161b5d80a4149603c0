@@ -1,0 +1,63 @@
+package oct20;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+
+class App
+{
+	int data;
+	long timestamp;
+	long key;
+	
+	 static class Cache
+	 {
+		static HashMap<Long, App> hm = new HashMap<Long,App>();
+		static long key =0;
+		
+		
+		public static void createBackup(App a)
+		{
+			a.timestamp = new Date().getTime();
+			hm.put(key, a);
+			key= key+1;
+		}
+		
+		public static Integer restoreBackup(int data)
+		{
+			Integer n = 0;
+			return n;
+		}
+		
+	}
+	
+	public void putData(int data)
+	{
+		this.data = data;
+		Cache.createBackup(this);
+	}
+	
+	public void getData(int data)
+	{
+		this.data = data;
+		Cache.restoreBackup(data);
+	}
+	
+	
+}
+
+public class CacheMain
+{
+
+	public static void main(String[] args)
+	{
+		App aa = new App();
+		aa.putData(7);
+		//System.out.println(aa.getData());
+	}
+
+
+}

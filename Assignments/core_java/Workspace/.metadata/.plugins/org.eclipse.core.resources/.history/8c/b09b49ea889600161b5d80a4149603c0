@@ -1,0 +1,27 @@
+package oct20;
+
+enum Statusquo
+{
+	New(0), Rejected(1), Accepted(2), Completed(3);
+	
+	private int val;
+	
+	Statusquo(int value)
+	{
+		this.val=value;
+	}
+	
+	int getValue()
+	{
+		this.val;
+	}
+}
+
+public class EnumMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

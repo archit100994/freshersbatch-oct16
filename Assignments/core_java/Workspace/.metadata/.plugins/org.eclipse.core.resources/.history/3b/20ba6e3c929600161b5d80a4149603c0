@@ -1,0 +1,20 @@
+package oct20;
+
+class App
+{
+	
+	private class Cache
+	{
+		
+	}
+	
+}
+
+public class CacheMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

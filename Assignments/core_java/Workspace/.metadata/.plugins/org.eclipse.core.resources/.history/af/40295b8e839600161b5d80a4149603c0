@@ -1,0 +1,61 @@
+package oct20;
+import java.lang.reflect.*;
+
+class Sample
+{
+	String nmae;
+	int age;
+	
+	public String toString()
+	{
+		return 
+	}
+	
+	@Getter
+	public void met1()
+	{
+		System.out.println("Method 1");
+	}
+	
+	@Getter
+	public void met2()
+	{
+		System.out.println("Method 2");
+	}
+	
+	public void met3()
+	{
+		System.out.println("Method 3");
+	}
+	
+	public void met4()
+	{
+		System.out.println("Method 4");
+	}
+}
+
+
+public class GetterMain {
+
+	private static final Getter NULL = null;
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		Class c = Class.forName("oct20.Sample");
+		
+		Method [] m = c.getDeclaredMethods();
+		
+		for(Method method : m)
+		{
+			Getter gett = method.getAnnotations(Getter.class);
+			
+			if(gett !=NULL)
+			{
+				method.invoke(c);
+			}
+		}
+
+	}
+
+}

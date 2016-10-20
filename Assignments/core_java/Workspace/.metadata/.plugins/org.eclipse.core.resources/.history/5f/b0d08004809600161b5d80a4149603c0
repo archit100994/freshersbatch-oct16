@@ -1,0 +1,5 @@
+package oct20;
+
+public @interface Getter {
+	String value() default ""
+}

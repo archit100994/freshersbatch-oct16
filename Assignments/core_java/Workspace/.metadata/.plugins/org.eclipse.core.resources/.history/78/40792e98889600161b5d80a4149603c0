@@ -1,0 +1,15 @@
+package oct20;
+
+enum Status
+{
+	New(0), Rejected(1), Accepted(2), Completed(3);
+}
+
+public class EnumMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

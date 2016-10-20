@@ -1,0 +1,19 @@
+package oct20;
+
+public class TryCatchMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			int i=5; 
+			int j=0;
+			int k;
+			
+			try {
+				k=j/i;
+			}			
+			finally {
+				System.out.println("****make changes in code****");
+			}
+	}
+
+}

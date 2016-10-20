@@ -1,0 +1,26 @@
+package oct20;
+
+import java.util.Date;
+
+class App
+{
+	
+	private class Cache
+	{
+		Date dt;
+		public void addCache()
+		{
+			
+		}
+	}
+	
+}
+
+public class CacheMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
