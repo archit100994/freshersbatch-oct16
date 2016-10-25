@@ -28,7 +28,9 @@ public class WaterTank extends Frame {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				capacity += 16.77f;
+				while(capacity<80)
+				{
+				capacity += 10f;
 				
 				try {
 					Thread.sleep(70);
@@ -37,7 +39,7 @@ public class WaterTank extends Frame {
 					e.printStackTrace();
 				}
 				repaint();
-			}
+			}}
 		});
 		
 		
@@ -45,7 +47,9 @@ public class WaterTank extends Frame {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				capacity -= 23.34f;
+			while(capacity>80)
+			{
+				capacity -= 12f;
 				
 				try {
 					Thread.sleep(70);
@@ -54,19 +58,39 @@ public class WaterTank extends Frame {
 					e.printStackTrace();
 				}
 				repaint();
+			}}
+		});
+		
+		controller = new Thread(new Runnable() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				if(capacity>80)
+				{
+					inlet.suspend();
+					outlet.resume();
+				}
+				else if(capacity<80)
+				{
+					outlet.suspend();
+					inlet.resume();
+				}
 			}
 		});
 		
 		
 		inlet.start();
 		outlet.start();
+		controller.start();
 		
 	}
 	public void paint(Graphics g) {
-		
+		int a=(int)(300*(capacity/100));
+		System.out.println(a);
 		g.drawRect(150, 100, 200, 300);
 		g.setColor(Color.RED);
-		g.fillRect(150, 400, 200, -(300*(int)(capacity/100)));
+		g.fillRect(150, 400, 200, -a);
 		g.drawString("70%", 380, 200);
 	}
 
