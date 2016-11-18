@@ -13,13 +13,55 @@
 
 		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
 		<property name="show_sql">true</property>
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">update</property> 
+		<!-- validate | update | create | create-drop -->
 
 		<property name="hibernate.c3p0.min_size">5</property>
 		<property name="hibernate.c3p0.max_size">20</property>
 
+
+<!--
 		<mapping class="com.Hibernate.Hibernate.Product"/>
+		<mapping class="com.Hibernate.Hibernate.Employee"/>
+-->
 
-
+<!-- 
+		<mapping class="mapping.Customer"/>
+		<mapping class="mapping.Enquiry"/>
+ -->		
+		
+<!--  		
+		<mapping class="mapping.Market"/>
+		<mapping class="mapping.Stock"/>
+ -->
+<!-- 
+		<mapping class="mapping.Student"/>
+		<mapping class="mapping.Course"/>
+ -->
+ <!-- 
+ 		<mapping class="singletable.Employee"/>
+		<mapping class="singletable.Labour"/>
+		<mapping class="singletable.Manager"/>
+ -->
+ <!-- 
+ 		<mapping class="tableperclass.Employee"/>
+		<mapping class="tableperclass.Labour"/>
+		<mapping class="tableperclass.Manager"/>
+-->
+<!-- 
+		<mapping class="tablepersubclass.Employee"/>
+		<mapping class="tablepersubclass.Labour"/>
+		<mapping class="tablepersubclass.Manager"/>
+  -->
+  
+  		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>  
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>
+		
+		<mapping class="caching.Product"/>  
+		
+		<!-- transactional|read-write|nonstrict-read-write|read-only -->
+		<class-cache usage="read-only" class="caching.Product"/>
+  
 </session-factory>
 </hibernate-configuration>

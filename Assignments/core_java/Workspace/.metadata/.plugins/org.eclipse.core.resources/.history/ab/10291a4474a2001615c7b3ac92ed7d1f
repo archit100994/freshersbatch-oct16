@@ -1,0 +1,12 @@
+package mapping;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Enquiry")
+public class Enquiry 
+{
+	
+
+}

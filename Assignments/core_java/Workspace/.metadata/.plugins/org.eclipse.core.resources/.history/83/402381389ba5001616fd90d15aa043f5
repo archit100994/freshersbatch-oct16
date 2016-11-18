@@ -1,0 +1,14 @@
+package chat;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ChatMain {
+
+	public static void main(String[] args) {
+
+		AbstractApplicationContext IoCContainer = new ClassPathXmlApplicationContext("chat.xml");
+		Map <String, chatRoom> map= IoCContainer.getBeansOfType(ChatRoom.class, false, true);
+	}
+
+}

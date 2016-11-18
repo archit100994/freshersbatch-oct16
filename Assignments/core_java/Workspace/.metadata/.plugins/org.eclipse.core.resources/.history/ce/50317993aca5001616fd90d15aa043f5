@@ -1,0 +1,22 @@
+package spring.springAOP;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class userAspect {
+
+	@Pointcut("execution(* userMain.register(..))")
+		public void breaker()
+		{
+		}
+	
+	@Before("breaker()")
+		public void kuchBhi(JoinPoint jp)
+		{
+			
+		}
+	
+}

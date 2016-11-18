@@ -1,0 +1,8 @@
+package Spring.SpringCore;
+
+public class Item {
+	
+	String name;
+	int price;
+
+}

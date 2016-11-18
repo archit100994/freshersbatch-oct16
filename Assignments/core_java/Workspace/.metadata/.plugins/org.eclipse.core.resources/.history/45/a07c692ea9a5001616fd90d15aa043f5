@@ -1,0 +1,12 @@
+package spring.springAOP;
+
+public class User {
+
+	String loginName;
+	String password;
+	String firstName;
+	String country;
+	
+	public User(String loginName, String password, String firstName, String country)
+	
+}

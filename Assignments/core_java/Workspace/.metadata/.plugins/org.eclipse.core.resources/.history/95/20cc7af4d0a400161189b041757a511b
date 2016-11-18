@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">	
+
+<hibernate-configuration>
+
+<session-factory>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="connection.username">system</property>
+		<property name="connection.password">root</property>
+
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property> 
+		<!-- validate | update | create | create-drop -->
+
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+
+
+<!--
+		<mapping class="com.Hibernate.Hibernate.Product"/>
+		<mapping class="com.Hibernate.Hibernate.Employee"/>
+-->
+
+<!-- 
+		<mapping class="mapping.Customer"/>
+		<mapping class="mapping.Enquiry"/>
+ -->		
+		
+<!--  		
+		<mapping class="mapping.Market"/>
+		<mapping class="mapping.Stock"/>
+ -->
+<!-- 
+		<mapping class="mapping.Student"/>
+		<mapping class="mapping.Course"/>
+ -->
+ <!-- 
+ 		<mapping class="singletable.Employee"/>
+		<mapping class="singletable.Labour"/>
+		<mapping class="singletable.Manager"/>
+ -->
+ 
+ 		<mapping class="singletable.Employee"/>
+		<mapping class="singletable.Labour"/>
+		<mapping class="singletable.Manager"/>
+ 
+</session-factory>
+</hibernate-configuration>

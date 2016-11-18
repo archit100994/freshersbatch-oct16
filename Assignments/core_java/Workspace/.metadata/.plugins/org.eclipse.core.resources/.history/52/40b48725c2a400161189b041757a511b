@@ -1,0 +1,25 @@
+package mapping;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Course")
+public class Course 
+{
+	private Set<Student> students = new HashSet<Student>(0);
+	
+	@Id
+	@GeneratedValue
+	@Column(name="c_id")
+		private int c_id;
+	
+	@Column(name="name")
+		private String name;
+	
+	
+
+}

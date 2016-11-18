@@ -1,0 +1,9 @@
+package com.Hibernate.Hibernate;
+
+import javax.persistence.Column;
+
+public class Employee
+{
+	@ID
+	@Column(name="EMP_ID")
+}

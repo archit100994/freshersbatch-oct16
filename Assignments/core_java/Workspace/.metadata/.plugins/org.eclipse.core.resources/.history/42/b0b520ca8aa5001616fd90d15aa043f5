@@ -1,0 +1,16 @@
+package Spring.SpringCore.lifeCycle;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainLifeCycle 
+{
+	public static void main(String[] args) 
+	{
+		AbstractApplicationContext container = new ClassPathXmlApplicationContext("Beans_App.xml");
+		Message msg = (Message) container.getBean("msg");
+		msg.setMsg("Hello");
+		
+		System.out.println(msg.getMsg());
+	}
+}

@@ -1,0 +1,8 @@
+package springRest.OnlineAd;
+
+import java.io.File;
+
+public class Photo {
+	int id;
+	File file=new File();
+}

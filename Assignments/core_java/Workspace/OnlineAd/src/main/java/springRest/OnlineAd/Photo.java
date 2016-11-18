@@ -1,0 +1,33 @@
+package springRest.OnlineAd;
+
+import java.io.File;
+
+public class Photo {
+	int id;
+	File file;
+	public Photo(int id, File file) {
+		super();
+		this.id = id;
+		this.file = file;
+	}
+	public Photo() {
+		super();
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public File getFile() {
+		return file;
+	}
+	public void setFile(File file) {
+		this.file = file;
+	}
+	@Override
+	public String toString() {
+		return "Photo [id=" + id + ", file=" + file + "]";
+	}
+	
+}

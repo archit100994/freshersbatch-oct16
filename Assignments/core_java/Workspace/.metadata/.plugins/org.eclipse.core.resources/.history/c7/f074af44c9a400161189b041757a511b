@@ -1,0 +1,11 @@
+package singletable;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@DiscriminatorValue(value="labour")
+public class Labour {
+
+}

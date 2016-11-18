@@ -1,0 +1,13 @@
+package spring.springAOP;
+
+public class ExecutionTime {
+
+	public static List<Integer> list;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		add_in_list()
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package chat;
+
+import org.springframework.context.support.AbstractApplicationContext;
+
+public class ChatMain {
+
+	public static void main(String[] args) {
+
+		AbstractApplicationContext ioc= new 
+	}
+
+}

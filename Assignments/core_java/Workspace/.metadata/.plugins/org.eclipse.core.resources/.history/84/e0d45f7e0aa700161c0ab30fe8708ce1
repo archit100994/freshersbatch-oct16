@@ -1,0 +1,16 @@
+package dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import entity.Ad;
+
+public class AdDAOImpl implements AdDAO 
+{
+	@Autowired
+		private org.springframework.orm.hibernate5.HibernateTemplate
+
+	public Ad create(Ad ad) {
+		return null;
+	}
+
+}

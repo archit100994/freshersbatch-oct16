@@ -1,0 +1,25 @@
+package spring.springAOP;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class userAspect {
+
+	@Pointcut("execution(* userMain.register(..))")
+		public void breaker()
+		{
+		}
+	
+	@Before("breaker()")
+		public void kuchBhi(JoinPoint jp)
+		{
+			if(((String)jp.getArgs()[0]).length()>3 && ((String)jp.getArgs()[1]).length()>3) 
+			{
+				System.out.println("Register Successful");
+			}
+		}
+	
+}

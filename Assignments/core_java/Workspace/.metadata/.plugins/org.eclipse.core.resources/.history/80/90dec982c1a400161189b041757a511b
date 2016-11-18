@@ -1,0 +1,70 @@
+package mapping;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+
+@Entity
+@Table(name="Student")
+public class Student 
+{
+	@Id
+	@GeneratedValue
+	@Column(name="s_id")
+		private int s_id;
+	
+	@Column(name="name")
+		private String name;
+	
+	private Set<Course> categories = new HashSet<Course>(0);
+	
+	
+	@ManyToMany(mappedBy="id", cascade= {CascadeType.ALL})
+	@JoinTable(name = "Course", joinColumns = {
+			@JoinColumn(name = "s_id") },inverseJoinColumns = { @JoinColumn(name = "c_id") 
+			}
+	)
+	public Set<Course> c_id;
+	
+	
+	
+	
+	public Student()
+	{
+		
+	}
+	
+	public Student(String name)
+	{
+		this.name=name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getId() {
+		return s_id;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + s_id + ", name=" + name + "]";
+	}
+	
+	
+
+}

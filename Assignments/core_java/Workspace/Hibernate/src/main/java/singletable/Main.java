@@ -1,0 +1,32 @@
+package singletable;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		Configuration configuration= new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory sessionFactory= configuration.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Employee employee = new Employee("Tom", 15201);
+		Labour labour = new Labour("jerry", 12014, 1203);
+		Manager manager= new Manager("Shinchan", 1230, 1);
+		
+		session.save(employee);
+		session.save(labour);
+		session.save(manager);
+		
+		transaction.commit();
+		session.close();
+		sessionFactory.close();
+		
+	}
+
+}

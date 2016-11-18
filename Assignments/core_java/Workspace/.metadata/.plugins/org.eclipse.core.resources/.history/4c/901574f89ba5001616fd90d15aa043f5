@@ -1,0 +1,28 @@
+package chat;
+
+import java.util.Map;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ChatMain {
+
+	public static void main(String[] args) {
+
+		AbstractApplicationContext IoCContainer = new ClassPathXmlApplicationContext("chat.xml");
+		Map <String, ChatRoom> map= IoCContainer.getBeansOfType(ChatRoom.class, false, true);
+		
+		for(int i=0; i<map.size(); i++)
+    	{
+    		int k=i+1;
+    		//Order o1 = map.get("order" + k);
+    		//sum=sum+o1 
+    		for(int j=0; j<map.get("chat" + k).getUser().size(); j++)
+    		{
+    			map.get("chat" + k).getUser().
+    		}
+    	}
+    	//System.out.println(sum);
+	}
+
+}

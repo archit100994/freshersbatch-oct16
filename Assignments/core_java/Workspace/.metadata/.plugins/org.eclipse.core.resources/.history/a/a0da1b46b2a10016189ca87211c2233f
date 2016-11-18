@@ -1,0 +1,67 @@
+package com.mockito.MockitoProject;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+import static org.mockito.Mockito.*;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(App.class)
+public class AppTest 
+    extends TestCase
+{
+    @Mock
+    public Connection dbcon;
+    
+    @Mock
+    public Statement stmt;
+    
+    @Mock
+    public ResultSet rs;
+    
+    
+    @BeforeClass
+    public void setUp() throws SQLException
+    {
+    	rs=mock(ResultSet.class);
+    	stmt= mock(Statement.class);
+    	dbcon= mock(Connection.class);
+    	PowerMockito.mockStatic(DriverManager.class);
+    	when(DriverManager.getConnection(anyString(), anyString(), anyString())).thenReturn(dbcon);
+    	
+    	when(dbcon.createStatement()).thenReturn(stmt);
+    	
+    	when(stmt.executeQuery(anyString())).thenReturn(rs);
+    	
+    	when(rs.next()).thenReturn(true);
+    	when(rs.getInt("ID")).thenReturn(101);
+    	when(rs.getString("NAME")).thenReturn("Default");
+    	when(rs.getDouble("SALARY")).thenReturn((double) 1000);
+    }
+    
+      public void testApp() throws Exception
+    {
+    	  App a = new App();
+    	  ArrayList<Employee> arr= new ArrayList<Employee>();
+    	  Employee e= new Employee(101, "Archit", 1000);
+    	  arr.add(e);
+        Assert.assertEquals(arr, a.getAllEmployees());
+    }
+}

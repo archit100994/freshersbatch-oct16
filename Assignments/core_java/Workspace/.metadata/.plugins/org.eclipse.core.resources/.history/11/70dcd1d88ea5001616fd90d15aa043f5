@@ -1,0 +1,9 @@
+package chat;
+
+import java.util.Set;
+
+public class ChatRoom 
+{
+	String name;
+	Set<Users> user;
+}

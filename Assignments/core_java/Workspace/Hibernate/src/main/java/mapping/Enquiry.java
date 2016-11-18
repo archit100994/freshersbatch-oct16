@@ -1,0 +1,67 @@
+package mapping;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Enquiry")
+public class Enquiry 
+{
+	@Id
+	@GeneratedValue
+	@Column(name="id")
+		private long id;
+	
+	@Column(name="subject")
+		private String subject;
+	
+	@Column(name="data")
+		private String data;
+	
+	public Enquiry() 
+	{
+		
+	}
+	
+	public Enquiry(String subject, String data)
+	{
+		this.subject=subject;
+		this.data=data;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "Enquiry [id=" + id + ", subject=" + subject + ", data=" + data + "]";
+	}
+	
+}

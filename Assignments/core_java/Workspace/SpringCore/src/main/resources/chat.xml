@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+
+	<bean id="msg1" class="chat.Messages">
+		<property name="msgs" value="1 message"></property>
+	</bean>
+	<bean id="msg2" class="chat.Messages">
+		<property name="msgs" value="2 message"></property>
+	</bean>
+	<bean id="msg3" class="chat.Messages">
+		<property name="msgs" value="3 message"></property>
+	</bean>
+	<bean id="msg4" class="chat.Messages">
+		<property name="msgs" value="4 message"></property>
+	</bean>
+	<bean id="msg5" class="chat.Messages">
+		<property name="msgs" value="5 message"></property>
+	</bean>
+	
+	<bean id="user1" class="chat.Users">
+		<property name="name" value="Archit"></property>
+		<property name="msg">
+	        <set>
+	            <ref bean="msg1"/>
+	            <ref bean="msg3"/>
+	        </set>
+	    </property>
+	</bean>
+	
+	<bean id="user2" class= "chat.Users">
+		<property name="name" value="Shrey"></property>
+		<property name="msg">
+	        <set>
+	            <ref bean="msg2"/>
+	            <ref bean="msg5"/>
+	        </set>
+	    </property>
+	</bean>
+	
+	<bean id="user3" class= "chat.Users">
+		<property name="name" value="Sneha"></property>
+		<property name="msg">
+	        <set>
+	            <ref bean="msg4"/>
+	        </set>
+	    </property>
+	</bean>
+	
+	<bean id="chat1" class="chat.ChatRoom">
+		<property name="name" value="java"></property>
+		<property name="user">
+	        <set>
+	            <ref bean="user1"/>
+	        </set>
+	    </property>
+	</bean>
+	
+	<bean id="chat2" class="chat.ChatRoom">
+		<property name="name" value="break"></property>
+		<property name="user">
+	        <set>
+	            <ref bean="user2"/>
+	            <ref bean="user3"/>
+	        </set>
+	    </property>
+	</bean>
+
+</beans>

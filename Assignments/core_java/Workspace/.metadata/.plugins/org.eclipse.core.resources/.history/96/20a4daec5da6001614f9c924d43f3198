@@ -1,0 +1,67 @@
+package springRest.OnlineAd;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ad 
+{
+	String title;
+	String name;
+	String category;
+	String description;
+	int photocount;
+	List<Photo> photo= new ArrayList<photo>();
+	public Ad(String title, String name, String category, String description, int photocount, List<File> photo) {
+		this.title = title;
+		this.name = name;
+		this.category = category;
+		this.description = description;
+		this.photocount = photocount;
+		this.photo = photo;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getPhotocount() {
+		return photocount;
+	}
+	public void setPhotocount(int photocount) {
+		this.photocount = photocount;
+	}
+	public List<File> getPhoto() {
+		return photo;
+	}
+	public void setPhoto(List<File> photo) {
+		this.photo = photo;
+	}
+	@Override
+	public String toString() {
+		return "Ad [title=" + title + ", name=" + name + ", category=" + category + ", description=" + description
+				+ ", photocount=" + photocount + ", photo=" + photo + "]";
+	}
+
+	
+	
+}

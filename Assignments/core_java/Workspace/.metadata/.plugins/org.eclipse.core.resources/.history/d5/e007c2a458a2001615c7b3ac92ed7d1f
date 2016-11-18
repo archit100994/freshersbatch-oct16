@@ -1,0 +1,20 @@
+package com.Hibernate.Hibernate;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class Employee
+{
+	@Id
+	@Column(name="EMP_ID")
+	public int id;
+	
+	@Column(name="NAME")
+	public String name;
+	
+	@Column(name="SALARY")
+	public int sal;
+	
+	@Column(name="CITY")
+	public String city;
+}

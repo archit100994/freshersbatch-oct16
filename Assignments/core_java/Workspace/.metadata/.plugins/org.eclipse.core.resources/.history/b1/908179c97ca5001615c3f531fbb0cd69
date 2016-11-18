@@ -1,0 +1,14 @@
+package Spring.SpringCore;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	AbstractApplicationContext IoCContainer = new ClassPathXmlApplicationContext("Beans_collection.xml");
+    	Order order1= (Order) IoCContainer.getBean("order1");
+    	Order order2= (Order) IoCContainer.getBean("order2");
+    }
+}

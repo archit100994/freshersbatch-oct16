@@ -1,0 +1,13 @@
+package Spring.SpringCore;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	AbstractApplicationContext IoCContainer = new ClassPathXmlApplicationContext("Beans_collection.xml");
+    	MessagePrinterBean obj1= (MessagePrinterBean) IoCContainer.getBean("order")
+    }
+}

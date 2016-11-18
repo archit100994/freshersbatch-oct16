@@ -1,0 +1,5 @@
+package dao;
+
+public interface AdDAO {
+	public Ad create(Ad ad);
+}

@@ -1,0 +1,28 @@
+package com.Hibernate.Hibernate;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Employee
+{
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="EMP_ID")
+	public int id;
+	
+	@Column(name="NAME")
+	public String name;
+	
+	@Column(name="SALARY")
+	public int sal;
+	
+	@Column(name="CITY")
+	public String city;
+	
+	public Employee(Stirng name, int sal, String City)
+	{
+		
+	}
+}

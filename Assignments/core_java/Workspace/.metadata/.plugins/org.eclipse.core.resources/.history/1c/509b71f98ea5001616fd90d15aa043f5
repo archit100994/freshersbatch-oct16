@@ -1,0 +1,7 @@
+package chat;
+
+public class Users {
+	String name;
+	Set<Messages> msg;
+	
+}

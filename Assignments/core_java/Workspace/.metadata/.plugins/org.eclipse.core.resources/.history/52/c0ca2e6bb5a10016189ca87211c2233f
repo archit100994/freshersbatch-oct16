@@ -1,0 +1,13 @@
+package com.Hibernate.Hibernate;
+
+import net.sf.ehcache.config.Configuration;
+
+public class HibernateProduct {
+
+	public static void main(String[] args) {
+
+		org.hibernate.cfg.Configuration config= new Configuration();
+		config.
+	}
+
+}

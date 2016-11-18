@@ -1,0 +1,12 @@
+package dao;
+
+import entity.Ad;
+
+public class AdDAOImpl implements AdDAO {
+
+	public Ad create(Ad ad) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

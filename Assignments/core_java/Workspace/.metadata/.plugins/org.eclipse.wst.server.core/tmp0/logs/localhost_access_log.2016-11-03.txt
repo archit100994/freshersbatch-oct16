@@ -1,0 +1,12 @@
+127.0.0.1 - - [03/Nov/2016:08:34:54 +0530] "GET / HTTP/1.1" 404 1000
+127.0.0.1 - - [03/Nov/2016:08:34:55 +0530] "GET /BasicBookSession/ HTTP/1.1" 304 -
+127.0.0.1 - - [03/Nov/2016:08:34:59 +0530] "POST /BasicBookSession/Controller?forward=login HTTP/1.1" 500 2285
+127.0.0.1 - - [03/Nov/2016:08:37:03 +0530] "GET / HTTP/1.1" 404 1000
+127.0.0.1 - - [03/Nov/2016:08:37:10 +0530] "POST /BasicBookSession/Controller?forward=login HTTP/1.1" 302 -
+127.0.0.1 - - [03/Nov/2016:08:37:10 +0530] "GET /BasicBookSession/Login.html HTTP/1.1" 200 400
+127.0.0.1 - - [03/Nov/2016:08:37:14 +0530] "POST /BasicBookSession/Controller?forward=login HTTP/1.1" 302 -
+127.0.0.1 - - [03/Nov/2016:08:37:14 +0530] "GET /BasicBookSession/Book1.html HTTP/1.1" 200 524
+127.0.0.1 - - [03/Nov/2016:08:37:18 +0530] "POST /BasicBookSession/Controller?forward=addbook&flag=1 HTTP/1.1" 302 -
+127.0.0.1 - - [03/Nov/2016:08:37:18 +0530] "GET /BasicBookSession/Book2.html HTTP/1.1" 200 563
+127.0.0.1 - - [03/Nov/2016:08:37:20 +0530] "POST /BasicBookSession/Controller?forward=gotocart&flag=2 HTTP/1.1" 302 -
+127.0.0.1 - - [03/Nov/2016:08:37:20 +0530] "GET /BasicBookSession/Cart HTTP/1.1" 200 -

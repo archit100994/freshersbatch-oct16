@@ -1,0 +1,8 @@
+package springRest.OnlineAd;
+
+public class Message
+{
+	String message;
+	int postId;
+	
+}

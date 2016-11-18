@@ -1,0 +1,22 @@
+package com.Hibernate.Hibernate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.*;
+
+public class HibernateProduct {
+
+	public static void main(String[] args) {
+
+		Configuration config= new Configuration();
+		config.configure("hibernate.cfg.xml");
+		
+		SessionFactory sefac= config.buildSessionFactory();
+		
+		Session s1= sefac.openSession();
+		Product p = new Product("Laptop", 64000);
+		
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package spring.springAOP;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class userAspect {
+
+	@Pointcut("execution(* UserMain)")
+	
+}

@@ -1,0 +1,18 @@
+package springRest.OnlineAd;
+
+public class Message
+{
+	String message;
+	int postId;
+	
+	public Message() {
+		super();
+	}
+
+	public Message(String message, int postId) {
+		super();
+		this.message = message;
+		this.postId = postId;
+	}
+	
+}

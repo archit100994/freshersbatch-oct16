@@ -1,0 +1,7 @@
+package dao;
+
+public class AdDAO {
+	public Ad create(Ad ad) {
+		
+	}
+}

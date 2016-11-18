@@ -1,0 +1,20 @@
+package spring.springAOP;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Usermain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		AbstractApplicationContext ioc = new ClassPathXmlApplicationContext("exectime.xml");
+		Usermain a = (Usermain) ioc.getBean("User");
+		//a.add_in_list();
+		//a.add_in_vector();
+		
+		ioc.registerShutdownHook();
+
+	}
+
+}

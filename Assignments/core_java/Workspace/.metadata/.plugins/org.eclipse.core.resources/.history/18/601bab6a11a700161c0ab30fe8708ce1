@@ -1,0 +1,11 @@
+package services;
+
+import entity.Ad;
+
+public interface AdService {
+	public static Ad create(Ad ad) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

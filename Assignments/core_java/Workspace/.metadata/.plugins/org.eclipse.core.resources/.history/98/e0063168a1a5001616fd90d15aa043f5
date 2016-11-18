@@ -1,0 +1,29 @@
+package spring.springAOP;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class ExecutionTimeAspect 
+{
+	static Long time;
+	
+	@Pointcut("execution(* ExecutionTime.*(..))")
+    public void parameter_pointcut(){}//pointcut name
+    
+    @Before("parameter_pointcut()")//applying pointcut on before advice  
+    public void checkParameters(JoinPoint jp)//it is advice (before advice)  
+    {  
+    	System.out.println("Inside Aspect");
+    	time= System.currentTimeMillis();
+    }
+    
+    @After("parameter_pointcut()")
+    public void abc(JoinPoint jp)
+    {
+		System.out.println("Time: " + System.currentTimeMillis()-time);
+    }
+}

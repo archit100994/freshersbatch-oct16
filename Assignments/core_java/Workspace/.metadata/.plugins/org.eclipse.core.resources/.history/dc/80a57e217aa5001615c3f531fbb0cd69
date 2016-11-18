@@ -1,0 +1,12 @@
+package Spring.SpringCore;
+
+public class order
+{
+	String name;
+	int price;
+	
+	public order()
+	{
+		
+	}
+}

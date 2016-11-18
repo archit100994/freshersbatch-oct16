@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="488" key="DIALOG_X_ORIGIN"/>
+		<item value="265" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Sample" key="selection"/>
+		<item value="userMain" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
-		<item value="true" key="wrap"/>
+		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="AnnotationRunner"/>
+			<item value="userMain"/>
+			<item value="InitializingBean"/>
+			<item value="Course"/>
+			<item value="stock"/>
+			<item value="Stock"/>
+			<item value="stock_id"/>
+			<item value="enquiry"/>
+			<item value="Enquiry"/>
 		</list>
 		<list key="replacehistory">
-			<item value="Sample"/>
+			<item value="Stock"/>
+			<item value="course"/>
+			<item value="Course"/>
+			<item value="stock"/>
+			<item value="int"/>
+			<item value="final_a"/>
+			<item value="&apos;\t\t\t\t&apos;"/>
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

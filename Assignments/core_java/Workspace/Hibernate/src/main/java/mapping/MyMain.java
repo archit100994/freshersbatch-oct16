@@ -1,0 +1,184 @@
+package mapping;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class MyMain {
+
+	public static void main(String[] args) 
+	{
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory sessionFactory = configuration.buildSessionFactory();
+		Session session= sessionFactory.openSession();
+		Transaction transaction= session.beginTransaction();
+		
+		studentCourseRetrive(session);
+		
+		//session.getTransaction();
+		transaction.commit();
+		session.close();
+		sessionFactory.close();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void customerEnquiryCreate(Session session)
+	{
+		Enquiry enquiry = new Enquiry("Hello", "Kuch bhi data");
+		Customer customer = new Customer("Archit", enquiry);
+		session.persist(customer);
+		System.out.println("saved!!");
+	}
+	
+	public static void customerEnquiryRetrive(Session session)
+	{
+		Query query = session.createQuery("from Customer");
+		List<Customer> productList = query.list();
+		for(Customer enquiry: productList)
+		{
+			System.out.println(enquiry);
+		}
+	}
+	
+	public static void customerEnquiryDelete(Session session)
+	{
+		Query query  = session.createQuery("delete from Customer where id=5");
+		int updates = query.executeUpdate();
+		System.out.println("No of records deleted = " + updates);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void stockMarketCreate(Session session)
+	{
+		Market market = new Market();
+		market.setName("Vishal");
+		Stock stock1 = new Stock("abc",152);
+		Stock stock2 = new Stock("def",41);
+		Stock stock3 = new Stock("ghi",84);
+		Stock stock4 = new Stock("klm",10);
+		session.save(market);
+		
+		stock1.setMarket(market);
+		stock2.setMarket(market);
+		stock3.setMarket(market);
+		stock4.setMarket(market);
+		
+		market.setStock(new HashSet<Stock>());
+		market.getStock().add(stock1);
+		market.getStock().add(stock2);
+		market.getStock().add(stock3);
+		market.getStock().add(stock4);
+		
+		System.out.println("department saved!!");
+		
+	}
+	
+	public static void stockMarketRetrive(Session session)
+	{
+		Query query = session.createQuery("from Market");
+		List<Market> productList = query.list();
+		for(Market enquiry: productList)
+		{
+			System.out.println(enquiry);
+		}
+	}
+	
+	public static void stockMarketUpdate(Long marketID, String name, Session session)
+	{
+		Market market = (Market)session.get(Market.class, marketID); 
+		market.setName(name);
+		session.save(market);
+		//session.update(market);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void studentCourseCreate(Session session)
+	{
+		Course course1 = new Course();
+		Course course2 = new Course();
+		Course course3 = new Course();
+		course1.setCourse_name("maths");
+		course2.setCourse_name("science");
+		course3.setCourse_name("english");
+		
+		
+		Student student1 = new Student();
+		Student student2 = new Student();
+		student1.setGender("Male");
+		student1.setName("ABC");
+		student2.setGender("FeMale");
+		student2.setName("DEF");
+		
+		
+		student1.getCourseset().add(course1);
+		student1.getCourseset().add(course2);
+	
+		student2.getCourseset().add(course3);
+		
+		course1.getStudentset().add(student1);
+		course2.getStudentset().add(student1);
+		course3.getStudentset().add(student2);
+		
+		session.persist(student2);
+		session.persist(student1);
+		session.persist(course1);
+		session.persist(course2);
+		session.persist(course3);
+		
+	}
+	
+	public static void studentCourseRetrive(Session session)
+	{
+		Query read_query = session.createQuery("from Student");
+		List<Student> studlist = read_query.list();
+		for(Student s: studlist){
+			System.out.println(s);
+		}
+	}
+	
+
+}

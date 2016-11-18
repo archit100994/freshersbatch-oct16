@@ -1,0 +1,12 @@
+package Spring.SpringCore.lifeCycle;
+
+public class Message {
+
+	String msg;
+	
+	public Message
+	{
+		
+	}
+	
+}

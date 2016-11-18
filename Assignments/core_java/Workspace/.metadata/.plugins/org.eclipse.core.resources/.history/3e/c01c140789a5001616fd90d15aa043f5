@@ -1,0 +1,9 @@
+package Spring.SpringCore.lifeCycle;
+
+public class MainLifeCycle 
+{
+	public static void main(String[] args) 
+	{
+		
+	}
+}

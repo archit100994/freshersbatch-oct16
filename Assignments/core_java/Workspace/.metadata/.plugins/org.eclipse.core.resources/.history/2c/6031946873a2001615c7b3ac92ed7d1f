@@ -1,0 +1,11 @@
+package mapping;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="map_customer")
+public class Customer
+{
+	
+}

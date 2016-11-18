@@ -1,0 +1,21 @@
+package springRest.OnlineAd;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ad 
+{
+	String title;
+	String name;
+	String category;
+	String description;
+	int photocount;
+	List<File> photo= new ArrayList<Integer>();
+	
+	for(int i=0; i<photocount; i++)
+	{
+		
+	}
+
+}

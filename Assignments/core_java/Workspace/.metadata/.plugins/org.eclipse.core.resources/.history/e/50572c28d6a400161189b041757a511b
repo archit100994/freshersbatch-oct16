@@ -1,0 +1,29 @@
+package caching;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		SessionFactory sessionfactory = configuration.buildSessionFactory();
+		Session session = sessionfactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Product product = new Product("Mobile", 12000);
+		session.persist(product);
+		
+		Product pr1= session.get(Product.class, product.getP_id());
+		Product pr2= session.get(Product.class, product.getP_id());
+		
+		transaction.commit();
+		session.close();
+		sessionfactory.close();
+	}
+
+}

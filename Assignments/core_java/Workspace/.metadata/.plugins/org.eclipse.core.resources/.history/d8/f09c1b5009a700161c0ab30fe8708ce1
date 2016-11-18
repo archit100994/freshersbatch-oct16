@@ -1,0 +1,6 @@
+package services;
+
+public interface AdService {
+	public Ad create(Ad ad);
+
+}

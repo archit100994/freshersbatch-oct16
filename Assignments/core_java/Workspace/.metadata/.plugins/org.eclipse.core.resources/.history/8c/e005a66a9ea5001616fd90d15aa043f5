@@ -1,0 +1,23 @@
+package spring.springAOP;
+
+import java.util.List;
+
+import org.springframework.context.support.AbstractApplicationContext;
+
+public class ExecutionTime {
+
+	public static List<Integer> list;
+	public static void main(String[] args) 
+	{
+		AbstractApplicationContext ioc = new 
+		add_in_list();
+
+	}
+	public static void add_in_list() {
+		for(int i=0; i<1000; i++)
+		{
+			list.add(i);
+		}
+	}
+
+}

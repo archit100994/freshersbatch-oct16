@@ -1,0 +1,27 @@
+package Spring.SpringCore.lifeCycle;
+
+public class Message {
+
+	String msg;
+	
+	public Message()
+	{
+		
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+		System.out.println("Message: " + msg);
+	}
+
+	@Override
+	public String toString() {
+		return "Message [msg=" + msg + "]";
+	}
+	
+	
+}
